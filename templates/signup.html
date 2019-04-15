@@ -1,0 +1,56 @@
+{% extends "base.html" %}
+
+  {% block content %}
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-md-3">
+        </div>
+        <div class="col-md-6">
+          <div class="form-box">
+            <h1> User Signup Validation</h1>
+            <form action="/validate-form" method="post">
+              <table class="table">
+                <tbody>
+                        <style>
+                                body {
+                                  background-color:aquamarine
+                                }
+                                .error{
+                                    color:red
+                                }
+                              </style>
+                  <tr class="form-group">
+                    <td><label for="username">Username: </label></td>
+                    <td><input type="text" class="form-control" name="username" id="username" placeholder="username" value={{username_input}}></td>
+                    <td><p class="error">{{username_error}}</p></td>
+                  </tr>
+                  <tr class="form-group">
+                    <td><label for="password">Password: </label></td>
+                    <td><input type="password" class="form-control" name="password" id="password" placeholder="••••••••"></td>
+                    <td><p class="error">{{password_error}}</p></td>
+                  </tr>
+                  <tr class="form-group">
+                    <td><label for="verify">Verify Password: </label></td>
+                    <td><input type="password" class="form-control" name="verify" id="verify" placeholder="••••••••"></td>
+                    <td><p class="error">{{verify_error}}</p></td>
+                  </tr>
+                  <tr class="form-group">
+                    <td><label for="email">Email (optional): </label></td>
+                    <td><input type="text" class="form-control" name="email" id="email" placeholder="you@yourdomain.com" value={{email_input}}></td>
+                    <td><p class="error">{{email_error}}</p></td>
+                  </tr>
+                  <tr>
+                    <td></td>
+                    <td><input type="submit" name="submit" id="submit" class="btn btn-primary" value="Submit"></input></td>
+                    <td></td>
+                  </tr>
+                </tbody>
+              </table>
+            </form>
+          </div>
+        </div>
+        <div class="col-md-3">
+        </div>
+      </div>
+    </div>
+  {% endblock %}
